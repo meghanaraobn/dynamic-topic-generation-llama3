@@ -1,17 +1,12 @@
 from unsloth import FastLanguageModel
 
-class TopicGenerationModel:
+class ModelHandler:
     """
-    Class for loading and saving a topic generation model.
-    Uses the FastLanguageModel from the 'unsloth' library.
-
-    Attributes:
-        max_seq_length (int): Maximum sequence length for the model.
-        load_in_4bit (bool): Flag indicating whether to load the model in 4-bit precision.
+    Class for loading and saving a model.
     """
     def __init__(self):
         """
-        Initializes the TopicGenerationModel with default parameters.
+        Initialize the default parameters.
         """
         self.max_seq_length = 2048
         self.load_in_4bit = True
@@ -22,7 +17,7 @@ class TopicGenerationModel:
         Loads the model and tokenizer from the specified model path.
 
         Args:
-            model_path (str): Path to the pre-trained model.
+            model_path (str): Path to the model.
 
         Returns:
             tuple: Loaded model and tokenizer.
@@ -34,7 +29,8 @@ class TopicGenerationModel:
                 dtype = self.dtype,
                 load_in_4bit = self.load_in_4bit,
             )
-
+        
+            # LoRA adapters are added and so only 1 to 10% of all parameters are updated
             model = FastLanguageModel.get_peft_model(
                 model,
                 r = 16,  # Any number > 0 ! Suggested 8, 16, 32, 64, 128
@@ -55,7 +51,7 @@ class TopicGenerationModel:
             print(f"Error loading model or tokenizer: {e}")
             raise
 
-    def save_model(self, model, tokenizer, path="model", save_method="lora"):
+    def save_model(self, model, tokenizer, path="fine_tuned_model", save_method="lora"):
         """
         Saves the model and tokenizer to the specified path.
 

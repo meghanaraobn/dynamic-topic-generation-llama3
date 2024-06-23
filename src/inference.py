@@ -1,6 +1,6 @@
 import argparse
 import os
-from models.dynamic_topic_generation_model import TopicGenerationModel
+from models.model_handler import ModelHandler
 from scripts.data_format import DataFormat
 
 class ModelInference:
@@ -15,9 +15,9 @@ class ModelInference:
         Args:
             model_path (str): Path to the pre-trained model.
         """
-        self.topic_generation_model = TopicGenerationModel()
+        self.model_handler = ModelHandler()
         try:
-            self.model, self.tokenizer = self.topic_generation_model.load_model(model_path)
+            self.model, self.tokenizer = self.model_handler.load_model(model_path)
         except Exception as e:
             print(f"Error loading model: {e}")
             raise
