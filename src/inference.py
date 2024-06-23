@@ -1,4 +1,5 @@
 import argparse
+import os
 from models.dynamic_topic_generation_model import TopicGenerationModel
 from scripts.data_format import DataFormat
 
@@ -75,14 +76,21 @@ def parse_args():
         Namespace: Parsed command-line arguments.
     """
     parser = argparse.ArgumentParser(description="Topic Generation Inference")
-    parser.add_argument("--input_text", type=str, required=True, help="Input text for topic generation")
+    parser.add_argument("--input_file", type=str, required=True, help="Path to the input text file for topic generation")
     parser.add_argument("--model_path", type=str, required=True, help="Path to the pre-trained model")
     return parser.parse_args()
 
 if __name__ == "__main__":
     args = parse_args()
+
+    # Read input text from input file
+    if not os.path.exists(args.input_file):
+        raise FileNotFoundError(f"The input file {args.input_file} does not exist.")
+    with open(args.input_file, 'r') as file:
+            input_text = file.read()
+
     model_inference = ModelInference(args.model_path)
-    topic = model_inference.generate_topic(args.input_text)
+    topic = model_inference.generate_topic(input_text)
     print('======================================================================================')
     print(f"Generated Topic: {topic}")
     print('======================================================================================')
