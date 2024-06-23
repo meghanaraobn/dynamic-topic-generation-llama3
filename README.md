@@ -12,7 +12,7 @@ The objective of this project is to fine-tune Llama 3 to perform dynamic topic g
 - Coming soon
 
 ## Datasets
-The dataset [ankitagr01/dynamic_topic_modeling_arxiv_abstracts](https://huggingface.co/datasets/ankitagr01/dynamic_topic_modeling_arxiv_abstracts) from Hugging Face is used. It consists of abstracts from arXiv and its corresponding topics.
+The dataset [ankitagr01/dynamic_topic_modeling_arxiv_abstracts](https://huggingface.co/datasets/ankitagr01/dynamic_topic_modeling_arxiv_abstracts) from Hugging Face is used. It consists of abstracts from arXiv and its corresponding topics. Selecting a dataset with topics for each text paragraph, rather than titles, summaries, or topic classes, is crucial for Llama 3. This ensures the model understands that it should dynamically generate topics based on the content of each paragraph.
 
 ## Process
 - Coming soon
