@@ -100,7 +100,8 @@ class ModelTrain:
                 seed = self.config.seed,
                 output_dir = self.config.output_dir,
                 report_to = "wandb" if self.config.use_wandb else None,
-                logging_dir = self.config.logging_dir
+                logging_dir = self.config.logging_dir,
+                run_name=self.config.project_name,
             ),
         )
         return trainer
