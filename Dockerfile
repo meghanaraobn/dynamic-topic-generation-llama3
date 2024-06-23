@@ -13,12 +13,17 @@ RUN curl -O https://repo.anaconda.com/miniconda/Miniconda3-py39_4.12.0-Linux-x86
     && bash Miniconda3-py39_4.12.0-Linux-x86_64.sh -b -p /opt/conda \
     && rm Miniconda3-py39_4.12.0-Linux-x86_64.sh
 
-ENV PATH=~/miniconda3/bin:${PATH}
-
+# Create the working directory
 WORKDIR /code
 
+# Set the environment variable
+ENV PATH=~/miniconda3/bin:${PATH}
+
+# Copy the current project folder
 COPY environment.yml /code/
 
+# Create the conda environment
 RUN /opt/conda/bin/conda env create -f environment.yml
 
-CMD nvidia-smi
+# Add conda activate to .bashrc
+RUN echo "source /opt/conda/bin/activate topic_generation_env" >> ~/.bashrc
