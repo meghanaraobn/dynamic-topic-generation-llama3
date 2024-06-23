@@ -121,6 +121,7 @@ class ModelTrain:
 
             # Model Train
             trainer = self.setup_trainer(dataset, eval_dataset)
+            print("Model training started")
             trainer.train()
 
             # Model Save
