@@ -1,6 +1,6 @@
 # Dynamic Topic Generation using Llama3
 
-* Coming soon
+- Coming soon
 
 
 ## Models
@@ -17,19 +17,18 @@
 # Docker
 - Coming soon.    
 
-
 # Fine-tuning
- *Coming soon
+ - Coming soon
 
 # Notebook
 - Coming soon
 
 ## Sample results  
-* Coming soon
-
-## References
 - Coming soon
 
-## Citation
+## Improvement Ideas
+- Coming soon
+  
+## References
 - Coming soon
  
