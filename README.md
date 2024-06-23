@@ -5,6 +5,8 @@ Dynamic topic generation is the process of automatically identifying and categor
 <img src="https://github.com/meghanaraobn/SUMM-AI-TASK/assets/76180138/675b0481-ae76-48bf-8936-6e99c253356c" width="20%" height="15%" align="right" />
 Llama 3, a Large Language Model (LLM), is chosen for this task due to its robust capabilities in understanding and generating natural language text. Llama 3 can effectively capture the semantic meaning and context from text paragraphs, making it suitable for dynamic topic generation.
 
+### Objective
+The objective of this project is to fine-tune Llama 3 to perform dynamic topic generation for a given text paragraph.
 
 ## Models
 - Coming soon
