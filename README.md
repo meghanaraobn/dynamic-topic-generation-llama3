@@ -19,13 +19,13 @@ The pre-quantized 4-bit [unsloth/llama-3-8b-bnb-4bit](https://colab.research.goo
 
 ## Getting Started
 
-# Docker
+## Docker
 - Coming soon.    
 
-# Fine-tuning
+## Fine-tuning
  - Coming soon
 
-# Notebook
+## Notebook
 - Coming soon
 
 ## Sample results  
