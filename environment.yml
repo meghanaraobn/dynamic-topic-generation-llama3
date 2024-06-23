@@ -1,0 +1,26 @@
+name: topic_generation_env
+channels:
+  - defaults
+  - conda-forge
+  - pytorch
+  - nvidia
+  - xformers
+dependencies:
+  - python=3.10
+  - pytorch-cuda=12.1
+  - pytorch
+  - cudatoolkit
+  - xformers
+  - fastapi
+  - uvicorn
+  - pip
+  - pip:
+    - torch
+    - transformers
+    - datasets
+    - wandb
+    - "unsloth[colab-new] @ git+https://github.com/unslothai/unsloth.git"
+    - trl<0.9.0
+    - peft
+    - accelerate
+    - bitsandbytes
