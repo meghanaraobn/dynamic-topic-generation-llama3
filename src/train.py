@@ -7,7 +7,7 @@ def parse_args():
     """
     parser = argparse.ArgumentParser(description="Training script for dynamic topic generation model")
     parser.add_argument("--wandb_key", type=str, help="Enable WandB integration")
-    parser.add_argument("--project_name", type=str, default="Llama3_dynamic_topic_generation", help="Name of the project in WandB")
+    parser.add_argument("--project_name", type=str, default="Dynamic_topic_generation_Llama3", help="Name of the project in WandB")
     parser.add_argument("--per_device_train_batch_size", type=int, default=2, help="Batch size per GPU/device for training")
     parser.add_argument("--gradient_accumulation_steps", type=int, default=2, help="Number of steps to accumulate gradients before performing optimization")
     parser.add_argument("--warmup_steps", type=int, default=5, help="Number of warmup steps for learning rate scheduler")
