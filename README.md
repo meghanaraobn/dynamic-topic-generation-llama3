@@ -9,7 +9,7 @@ Llama 3, a Large Language Model (LLM), is chosen for this task due to its robust
 The objective of this project is to fine-tune Llama 3 to perform dynamic topic generation for a given text paragraph.
 
 ## Models
-- Coming soon
+The pre-trained [unsloth/llama-3-8b-bnb-4bit](https://colab.research.google.com/drive/135ced7oHytdxu3N2DNe1Z0kqjyYIkDXp?usp=sharing) model, optimized for memory efficiency by using a 4-bit format is used. The model is fine-tuned using LoRA (Low-Rank Adaptation), which updates only a small fraction of parameters, enhancing efficiency. The [unsloth](https://www.unsloth.ai/blog/llama3) configuration significantly reduces VRAM usage, enabling support for larger batch sizes and longer context lengths.
 
 ## Datasets
 The dataset [ankitagr01/dynamic_topic_modeling_arxiv_abstracts](https://huggingface.co/datasets/ankitagr01/dynamic_topic_modeling_arxiv_abstracts) from Hugging Face is used. It consists of abstracts from arXiv and its corresponding topics. Selecting a dataset with topics for each text paragraph, rather than titles, summaries, or topic classes, is crucial for Llama 3. This ensures the model understands that it should dynamically generate topics based on the content of each paragraph.
