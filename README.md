@@ -1,4 +1,4 @@
-# Dynamic Topic Generation using Llama3
+# Dynamic Topic Generation using Llama 3
 Dynamic topic generation is the process of automatically identifying and categorizing the main themes or subjects within a collection of text data. Unlike traditional methods that rely on predefined categories, dynamic topic generation adapts to the content being analyzed, allowing topics to vary based on the unique characteristics of the texts.
 
 
