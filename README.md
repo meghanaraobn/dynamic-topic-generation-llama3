@@ -12,7 +12,7 @@ The objective of this project is to fine-tune Llama 3 to perform dynamic topic g
 - Coming soon
 
 ## Datasets
-- Coming soon
+The dataset "ankitagr01/dynamic_topic_modeling_arxiv_abstracts" from Hugging Face is used. It consists of abstracts from arXiv and its corresponding topics.
 
 ## Process
 - Coming soon
