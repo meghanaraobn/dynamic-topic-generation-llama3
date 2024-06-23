@@ -86,7 +86,7 @@ class TopicGenerationModel:
         try:
             if self.args.wandb_key:
                 # Initialize WandB
-                wandb.login(key=self.wandb_key)
+                wandb.login(key=self.args.wandb_key)
                 self.run = wandb.init(project=self.args.project_name)
             else:
                 wandb.login(relogin=True)
