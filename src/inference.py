@@ -60,9 +60,9 @@ class ModelInference:
         try:
             dataFormat = DataFormat(self.tokenizer.eos_token)
             formatted_input = dataFormat.format_single_prompt(input_text)
-            input_ids = self.tokenizer(formatted_input, return_tensors="pt").to("cuda")
-            output = self.model.generate(**input_ids, max_new_tokens=8, use_cache=True)
-            response = self.extract_response_text(self.tokenizer.batch_decode(output, skip_special_tokens=True)[0])
+            input_ids = self.tokenizer(formatted_input, return_tensors="pt").to("cuda") # Tokenize input
+            output = self.model.generate(**input_ids, max_new_tokens=8, use_cache=True) # Model generated output
+            response = self.extract_response_text(self.tokenizer.batch_decode(output, skip_special_tokens=True)[0]) # Only extracting response from output
             return response
         except Exception as e:
             print(f"Error during topic generation: {e}")
