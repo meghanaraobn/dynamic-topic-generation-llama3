@@ -60,16 +60,16 @@ For managing the setup:
  To fine-tune the pre-trained Llama 3 model, use the following commands:
  * View all available arguments and their default values:
    ```bash
-    python train.py --help
+   python train.py --help
    ```
   * Fine-tune with default settings:
-   ```bash
-   python train.py
-   ```
+    ```bash
+    python train.py
+    ```
   * Example of setting specific arguments:
-   ```bash
-  python train.py --wandb_key '<api_key>' --num_train_epochs 1 
-  ```
+    ```bash
+    python train.py --wandb_key '<api_key>' --num_train_epochs 1 
+    ```
 
 ## Notebook
 - Coming soon
