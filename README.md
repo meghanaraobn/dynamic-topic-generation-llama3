@@ -25,6 +25,7 @@ The pre-quantized 4-bit [unsloth/llama-3-8b-bnb-4bit](https://colab.research.goo
 
 ## Code Structure
 The project is organized into the following directories and files:
+- `docs/`: Contains information documents related to the project.
 - `data/`: Contains input.txt file with sample text for testing purposes.
 - `src/`: Includes the main source code files.
     - `models/`: Directory for model-related functionalities.
@@ -112,5 +113,5 @@ For managing the setup:
 The notebook version of the project is present [here](./src/notebooks/Dynamic_Topic_Generation_Llama_3.ipynb).
 
 ## Improvement Ideas
-- Coming soon
+The ideas for improving the model performance and evaluation metrics can be found [here](./docs/improvement_ideas_and_evaluation_metrics.txt)
  
