@@ -1,6 +1,6 @@
-=============================================================================================================================================================================================
+=================================================================================================================
 Improvement Ideas
-=============================================================================================================================================================================================
+=================================================================================================================
 
 - Dataset:
 
@@ -22,11 +22,11 @@ Improvement Ideas
 7. Implementing k-fold cross-validation to ensure generalization of the Llama 3 model across different data splits during fine-tuning.
 8. Using an early stopping technique based on validation loss to prevent overfitting and to ensure optimal model performance. Continuously assessing the model's performance on a validation dataset during training to make necessary optimizations.
 
-=============================================================================================================================================================================================
+=================================================================================================================
 Ideas on evaluating the generated topic from Llama 3  
 
 Reference - (https://next.redhat.com/2024/05/16/evaluating-the-performance-of-large-language models/#:~:text=Automatic%20evaluation%20metrics%20play%20a,precision%20in%20generating%20identical%20responses.)
-=============================================================================================================================================================================================
+=================================================================================================================
 
 1. Automatic Metrics: These are quantitative measures used to assess the quality of generated responses without human intervention. Metrics such as exact match, BLEU scores, ROUGE scores, and word error rate (WER) can be used to evaluate how accurately Llama 3 generates topics for a given text data.
 
