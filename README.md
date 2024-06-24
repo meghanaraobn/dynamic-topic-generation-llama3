@@ -40,16 +40,16 @@ Considering the available resources, the pre-quantized 4-bit [unsloth/llama-3-8b
 ## Code Structure
 The project is organized into the following directories and files:
 - `docs/`: Contains information documents related to the project.
-- `data/`: Contains input.txt file with sample text for testing purposes.
+- `data/`: Contains input.txt file with sample text for testing purpose.
 - `src/`: Includes the main source code files.
     - `models/`: Directory for model-related functionalities.
         - `model_handler.py`: Script to load and save a model
-        - `topic_generation_model.py`: Sript to train dynamic topic generation model.
+        - `topic_generation_model.py`: Script to train dynamic topic generation model.
     - `scripts/`: Directory for additional scripts and utilities.
         - `data_format.py`: Script to handle data formatting.
     - `inference.py`: Script for model inference.
     - `train.py`: Script for model training.
-- `dockerignore`: To exclude unnecessary files from the Docker build context.
+- `dockerignore`: To exclude unnecessary files from the docker build context.
 - `gitignore`: To ignore certain files from version control.
 - `Dockerfile`: To build the project's docker image.
 - `docker-compose.yml`: Configuration file for docker compose.
