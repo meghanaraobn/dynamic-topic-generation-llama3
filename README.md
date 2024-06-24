@@ -30,7 +30,7 @@ Llama 3 is pre-trained on vast amounts of text data to understand natural langua
   ```
 
 ## Models
-The pre-quantized 4-bit [unsloth/llama-3-8b-bnb-4bit](https://colab.research.google.com/drive/135ced7oHytdxu3N2DNe1Z0kqjyYIkDXp?usp=sharing) model, optimized for memory efficiency is used. The model is fine-tuned using [LoRA (Low-Rank Adaptation)](https://www.entrypointai.com/blog/lora-fine-tuning/), which updates only a small fraction of parameters. The [unsloth](https://www.unsloth.ai/blog/llama3) configuration enhances performance with faster processing, support for longer context lengths, and reduced VRAM usage.
+Considering the available resources, the pre-quantized 4-bit [unsloth/llama-3-8b-bnb-4bit](https://colab.research.google.com/drive/135ced7oHytdxu3N2DNe1Z0kqjyYIkDXp?usp=sharing) model, optimized for memory efficiency is used. The model is fine-tuned using [LoRA (Low-Rank Adaptation)](https://www.entrypointai.com/blog/lora-fine-tuning/), which updates only a small fraction of parameters. The [unsloth](https://www.unsloth.ai/blog/llama3) configuration provides improved performance with faster processing, support for longer context lengths, and reduced VRAM usage.
  
 ## Prerequisites
 * Linux or macOS (recommended)
