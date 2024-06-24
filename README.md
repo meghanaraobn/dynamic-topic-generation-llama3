@@ -57,9 +57,18 @@ For managing the setup:
 ### Fine-tuning the model
  Logging is done using [Weights & Biases](https://wandb.ai/site). An account should be created to log the experiments.
 
- The pre-trained Llama 3 model can be fine-tuned like this:
+ To fine-tune the pre-trained Llama 3 model, use the following commands:
+ * View all available arguments and their default values:
    ```bash
-  python train.py
+    python train.py --help
+   ```
+  * Fine-tune with default settings:
+   ```bash
+   python train.py
+   ```
+  * Example of setting specific arguments:
+   ```bash
+  python train.py --wandb_key '<api_key>' --num_train_epochs 1 
   ```
 
 ## Notebook
