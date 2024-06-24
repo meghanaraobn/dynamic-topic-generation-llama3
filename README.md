@@ -12,11 +12,29 @@ The objective of this project is to fine-tune Llama 3 to perform dynamic topic g
 ## Datasets
 The dataset [ankitagr01/dynamic_topic_modeling_arxiv_abstracts](https://huggingface.co/datasets/ankitagr01/dynamic_topic_modeling_arxiv_abstracts) from Hugging Face is used. It consists of abstracts from arXiv and its corresponding topics. Selecting a dataset with topics for each text paragraph, rather than titles, summaries, or topic classes, is crucial for Llama 3. This ensures the model understands that it should dynamically generate topics based on the content of each paragraph.
 
+### Trasforming dataset in form of prompts
+Llama 3 is pre-trained on vast amounts of text data to understand natural language. However, they need to be adapted to specific tasks or domains to perform well. By fine-tuning Llama 3 with datasets in the form of prompts, give it more context and improves its ability to generate text relevant to this dynamic topic generation task. Below is an example of original sample transformed to the prompt format
+  ```bash
+    prompt = """Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
+
+    ### Instruction:
+    Please generate a meaningful topic for the following article.
+    
+    ### Input:
+    Maximum Variance Unfolding (MVU) and its variants have been very successful in embedding data-manifolds in lower dimensional spaces, often revealing the true intrinsic dimension. In this paper we show how to also incorporate       supervised class information into an MVU-like method without breaking its convexity. We call this method the Isometric Separation Map and we show that the resulting kernel matrix can be used as a binary/multiclass Support Vector Machine-like method in a semi-supervised (transductive) framework. We also show that the method always finds a kernel matrix that linearly separates the training data exactly without projecting them in infinite dimensional spaces. In traditional SVMs we choose a kernel and hope that the data become linearly separable in the kernel space. In this paper we show how the hyperplane can be chosen ad-hoc and the kernel is trained so that data are always linearly separable. Comparisons with Large Margin SVMs show comparable performance.
+    
+    
+    ### Response:
+    Semi-supervised Learning with MVU
+"""
+  ```
+
+
 ## Models
 The pre-quantized 4-bit [unsloth/llama-3-8b-bnb-4bit](https://colab.research.google.com/drive/135ced7oHytdxu3N2DNe1Z0kqjyYIkDXp?usp=sharing) model, optimized for memory efficiency is used. The model is fine-tuned using [LoRA (Low-Rank Adaptation)](https://www.entrypointai.com/blog/lora-fine-tuning/), which updates only a small fraction of parameters. The [unsloth](https://www.unsloth.ai/blog/llama3) configuration enhances performance with faster processing, support for longer context lengths, and reduced VRAM usage.
 
 ## Process
-- Coming soon
+First the da
   
 ## Prerequisites
 * Linux or macOS (recommended)
