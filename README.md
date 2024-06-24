@@ -61,7 +61,7 @@ The project is organized into the following directories and files:
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ### Installation
-* Clone this repo:
+* To clone this repo:
   ```bash
   git clone https://github.com/meghanaraobn/dynamic-topic-generation-llama3.git
   cd dynamic-topic-generation-llama3
