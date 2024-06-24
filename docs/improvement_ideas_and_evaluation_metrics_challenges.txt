@@ -33,3 +33,13 @@ Reference - (https://next.redhat.com/2024/05/16/evaluating-the-performance-of-la
 3. Hybrid Evaluation Approach: Combining automatic metrics with human evaluation gives a better understanding of how well Llama 3 performs.
 
 4. Feedback Integration: Feedback from both automatic metrics and human evaluators can be integrated into the model's fine-tuning processes. For example, if automatic metrics indicate a low performance on certain types of inputs, then adjustments in training strategies or hyperparameters can be made to improve the model's ability to generate diverse and relevant topics.
+
+=================================================================================================================
+Challenges
+=================================================================================================================
+
+1. Computational Resources: Training Llama3 required substantial GPU and RAM resources beyond what was available on my local system. I utilized Google Colab Pro. Even then I could not use the original Llama 3 model, I had to use a quantized version of the model to accomodate the resources provided by colab pro.
+
+2. Data availability: I invested time searching for a suitable dataset focused specifically on topics essential for meaningful topic generation. Datasets containing titles, topic classes, and summaries were not suitable since the model needed to only learn to generate topics and not anything else.
+
+3. Finding Optimal Hyperparameters: Llama 3, being an LLM, inherently possesses broad topic knowledge. While fine-tuning with fewer steps can yield meaningful results initially, iterative training over different batch sizes, epochs or steps was important to get consistent performance for different text inputs.
