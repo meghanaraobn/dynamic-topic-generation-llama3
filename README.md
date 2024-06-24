@@ -89,7 +89,7 @@ For managing the setup:
   docker-compose down
   ```
 
-### Fine-tuning the model
+## Fine-tuning the model
  Logging is done using [Weights & Biases](https://wandb.ai/site). An account should be created to log the experiments.
 
  To fine-tune the pre-trained Llama 3 model, follow these steps:
@@ -107,7 +107,7 @@ For managing the setup:
     ```
     Note: To use steps instead of epochs for fine-tuning, comment out `num_train_epochs` and uncomment the `max_steps` training argument in the code.
 
- ### Model Inference
+ ## Model Inference
  To dynamically generate topics for a given input text collection, follow these steps:
  * View all required arguments:
    ```bash
