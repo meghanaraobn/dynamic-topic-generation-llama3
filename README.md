@@ -12,8 +12,8 @@ The objective of this project is to fine-tune Llama 3 to perform dynamic topic g
 ## Datasets
 The dataset [ankitagr01/dynamic_topic_modeling_arxiv_abstracts](https://huggingface.co/datasets/ankitagr01/dynamic_topic_modeling_arxiv_abstracts) from Hugging Face is used. It consists of abstracts from arXiv and its corresponding topics. Selecting a dataset with topics for each text paragraph, rather than titles, summaries, or topic classes, is crucial for Llama 3. This ensures the model understands that it should dynamically generate topics based on the content of each paragraph.
 
-### Trasforming dataset in form of prompts
-Llama 3 is pre-trained on vast amounts of text data to understand natural language. However, they need to be adapted to specific tasks or domains to perform well. By fine-tuning Llama 3 with datasets in the form of prompts, give it more context and improves its ability to generate text relevant to this dynamic topic generation task. Below is an example of original sample transformed to the prompt format
+### Transforming Dataset into Prompts
+Llama 3 is pre-trained on vast amounts of text data to understand natural language. However, it has to be adapted to specific tasks to perform well. By fine-tuning Llama 3 with datasets in the form of prompts, give it more context and improves its ability to generate text relevant to this dynamic topic generation task. Below is an example of original sample transformed to the prompt format.
   ```bash
     prompt = """Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
 
@@ -29,13 +29,9 @@ Llama 3 is pre-trained on vast amounts of text data to understand natural langua
 """
   ```
 
-
 ## Models
 The pre-quantized 4-bit [unsloth/llama-3-8b-bnb-4bit](https://colab.research.google.com/drive/135ced7oHytdxu3N2DNe1Z0kqjyYIkDXp?usp=sharing) model, optimized for memory efficiency is used. The model is fine-tuned using [LoRA (Low-Rank Adaptation)](https://www.entrypointai.com/blog/lora-fine-tuning/), which updates only a small fraction of parameters. The [unsloth](https://www.unsloth.ai/blog/llama3) configuration enhances performance with faster processing, support for longer context lengths, and reduced VRAM usage.
-
-## Process
-First the da
-  
+ 
 ## Prerequisites
 * Linux or macOS (recommended)
 * Python 3
