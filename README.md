@@ -112,6 +112,6 @@ For managing the setup:
 ## Notebook
 The notebook version of the project is present [here](./src/notebooks/Dynamic_Topic_Generation_Llama_3.ipynb).
 
-## Improvement Ideas
+## Improvement Ideas and Challenges
 The ideas for improving model performance, evaluation metrics and addressing challenges can be found [here](./docs/improvement_ideas_and_evaluation_metrics.txt)
  
