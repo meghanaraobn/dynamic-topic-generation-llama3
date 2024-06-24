@@ -21,6 +21,7 @@ class TopicGenerationModel:
         self.args = args
         self.dataset_name = "ankitagr01/dynamic_topic_modeling_arxiv_abstracts"
         self.pre_trained_model_path = "unsloth/llama-3-8b-bnb-4bit"
+        self.max_seq_length = 2048
         self.model_handler = ModelHandler()
         try:
             self.model, self.tokenizer = self.model_handler.load_model(self.pre_trained_model_path)
@@ -47,33 +48,34 @@ class TopicGenerationModel:
         Setup SFTTrainer with training arguments.
         """
         trainer = SFTTrainer(
-            model = self.model,
-            tokenizer = self.tokenizer,
-            train_dataset = dataset,
-            eval_dataset = eval_dataset,
-            dataset_text_field = "text",
-            max_seq_length = 2048,
-            dataset_num_proc = 2,
-            packing = False,
+            model = self.model,  # The pre-trained model to be fine-tuned
+            tokenizer = self.tokenizer,  # The tokenizer associated with the model
+            train_dataset = dataset,  # Dataset used for training
+            eval_dataset = eval_dataset,  # Dataset used for evaluation
+            dataset_text_field = "text",  # Only take 'text' part from the dataset
+            max_seq_length = self.max_seq_length,  # Maximum sequence length for input text
+            dataset_num_proc = 2,  # Number of processes for dataset processing
+            packing = False,  # When set to True, it makes training faster by combining multiple short sequences into a single long sequence.
             args=TrainingArguments(
-                per_device_train_batch_size = self.args.per_device_train_batch_size,
-                gradient_accumulation_steps = self.args.gradient_accumulation_steps,
-                warmup_steps = self.args.warmup_steps,
-                max_steps = self.args.max_steps,
-                learning_rate = self.args.learning_rate,
-                fp16 = not is_bfloat16_supported(),
-                bf16 = is_bfloat16_supported(),
-                logging_steps = self.args.logging_steps,
-                evaluation_strategy = self.args.evaluation_strategy,
-                eval_steps = self.args.eval_steps,
-                save_steps = self.args.save_steps,
-                optim = self.args.optim,
-                weight_decay = self.args.weight_decay,
-                lr_scheduler_type = self.args.lr_scheduler_type,
-                seed = self.args.seed,
-                output_dir = self.args.output_dir,
-                report_to = "wandb" if self.args.wandb_key else None,
-                logging_dir = self.args.logging_dir,
+                per_device_train_batch_size = self.args.per_device_train_batch_size,  # Batch size for training
+                gradient_accumulation_steps = self.args.gradient_accumulation_steps,  # Number of steps to accumulate gradients 
+                warmup_steps = self.args.warmup_steps,  # Number of warmup steps for learning rate scheduler
+                num_train_epochs = self.args.num_train_epochs, # Number of epochs for training
+                #max_steps = self.args.max_steps,  # Maximum number of training steps
+                learning_rate = self.args.learning_rate, # Initial learning rate
+                fp16 = not is_bfloat16_supported(), # Use 16-bit precision if bfloat16 is not supported
+                bf16 = is_bfloat16_supported(),  # Use bfloat16 precision if supported
+                logging_steps = self.args.logging_steps,  # Logging steps interval
+                eval_strategy = self.args.evaluation_strategy,  # Evaluation step interval
+                eval_steps = self.args.eval_steps,  # Evaluation step interval
+                save_steps = self.args.save_steps,  # Model save step interval
+                optim = self.args.optim,  # AdamW optimizer in 8-bit precision to reduce memory usage.
+                weight_decay = self.args.weight_decay,  # Weight decay for the optimizer
+                lr_scheduler_type = self.args.lr_scheduler_type,  # Learning rate scheduler
+                seed = self.args.seed,  # Random seed for reproducibility
+                output_dir = self.args.output_dir,  # Directory to save model checkpoints
+                report_to = "wandb" if self.args.wandb_key else None,  # Reporting tool for logging in wandb
+                logging_dir = self.args.logging_dir,  # Directory for logging
                 run_name = self.args.project_name,
             ),
         )
