@@ -12,7 +12,7 @@ Improvement Ideas
 
 - Hyper-parameter Tuning
 
-3. Experimenting with different batch sizes and gradient accumulation steps to check if there is any impact on the model performance.
+3. Experimenting with different learning rates, epochs numbers, batch sizes and gradient accumulation steps to check if there is any impact on the model performance.
 4. Experimenting with different adaptive learning rate techniques such as Cosine Annealing and Warmup Schedules and different optimization algorithms like Lookahead Optimizers, to improve model performance.
 
 - Evaluation and validation
@@ -32,7 +32,7 @@ Reference - (https://next.redhat.com/2024/05/16/evaluating-the-performance-of-la
 
 3. Hybrid Evaluation Approach: Combining automatic metrics with human evaluation gives a better understanding of how well Llama 3 performs.
 
-4. Feedback Integration: Feedback from both automatic metrics and human evaluators can be integrated into the model's fine-tuning processes. For example, if automatic metrics indicate a low performance on certain types of inputs, then adjustments in training strategies or hyperparameters can be made to improve the model's ability to generate diverse and relevant topics.
+4. Feedback Integration: Feedback from both automatic metrics and human evaluators can be integrated into the model's fine-tuning processes. For example, if automatic metrics indicate a low performance on certain types of inputs, then adjustments in training strategies or hyperparameters can be made to improve the model's ability to generate relevant topics.
 
 =================================================================================================================
 Challenges
