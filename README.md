@@ -27,7 +27,6 @@ These instructions will get you a copy of the project up and running on your loc
   git clone https://github.com/meghanaraobn/dynamic-topic-generation-llama3.git
   cd dynamic-topic-generation-llama3
   ```
-* Or download and unzip it.
 * For pip users, please type the command `pip install -r requirements.txt`.
 * For Conda users, you can create a new Conda environment using `conda env create -f environment.yml`.
 ### Docker
