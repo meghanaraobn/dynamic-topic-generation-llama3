@@ -5,22 +5,20 @@ Improvement Ideas
 - Dataset:
 
 1. Fine-tuning the Llama 3 model with a diverse range of data, including both long and short paragraphs, significantly enhances its capability to generate more relevant topics. 
-2. It is important that the dataset maintains a balanced representation across various topics to prevent any bias toward specific subject areas.
 
 - Model Architecture
 
-3. Although quantized models significantly reduce VRAM usage, allowing for larger batch sizes and longer context lengths making it feasible to run on lower-end GPUs the quantization can introduce some loss in accuracy and performance due to the lower precision representation of weights and activations. Using the full Llama 3 model which operates with higher precision (16-bit or 32-bit floating point) leads to better performance in terms of accuracy and the ability to capture complex patterns in the data.
+2. Although quantized models significantly reduce VRAM usage, allowing for larger batch sizes and longer context lengths making it feasible to run on lower-end GPUs the quantization can introduce some loss in accuracy and performance due to the lower precision representation of weights and activations. Using the full Llama 3 model which operates with higher precision (16-bit or 32-bit floating point) leads to better performance in terms of accuracy and the ability to capture complex patterns in the data.
 
 - Hyper-parameter Tuning
 
-4. Experimenting with different batch sizes and gradient accumulation steps to check if there is any impact on the model performance.
-5. Experimenting with different adaptive learning rate techniques such as Cosine Annealing and Warmup Schedules and different optimization algorithms like Lookahead Optimizers, to improve model performance.
+3. Experimenting with different batch sizes and gradient accumulation steps to check if there is any impact on the model performance.
+4. Experimenting with different adaptive learning rate techniques such as Cosine Annealing and Warmup Schedules and different optimization algorithms like Lookahead Optimizers, to improve model performance.
 
 - Evaluation and validation
 
-6. Training multiple variants of the Llama 3 model with varying hyperparameters like learning rates, batch sizes, and model architectures helps determine the optimal configuration leading to good results.
-7. Implementing k-fold cross-validation to ensure generalization of the Llama 3 model across different data splits during fine-tuning.
-8. Using an early stopping technique based on validation loss to prevent overfitting and to ensure optimal model performance. Continuously assessing the model's performance on a validation dataset during training to make necessary optimizations.
+5. Fine-tuning multiple variants of the Llama 3 model with varying hyperparameters like learning rates, batch sizes, number of epochs and model architectures helps determine the optimal configuration leading to good results.
+6. Using an early stopping technique based on validation loss to prevent overfitting and to ensure optimal model performance. Continuously assessing the model's performance on a validation dataset during training to make necessary optimizations.
 
 =================================================================================================================
 Ideas on evaluating the generated topic from Llama 3  
