@@ -19,7 +19,14 @@ The pre-quantized 4-bit [unsloth/llama-3-8b-bnb-4bit](https://colab.research.goo
 - Coming soon
 
 ## Getting Started
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
+### Installation
+* Clone this repo:
+  ```bash
+  git clone https://github.com/meghanaraobn/SUMM-AI-TASK.git
+  ```
+* Or download and unzip it.
 ### Docker
 - Coming soon.    
 
