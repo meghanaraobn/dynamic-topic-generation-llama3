@@ -121,6 +121,7 @@ For managing the setup:
    python src/inference.py --model_path 'fine_tuned_model' --input_file 'data/input.txt'
    ```
    Note: model_path should point to the directory containing the fine-tuned model.
+
    Fine-tuned model can be downloaded [here](https://1drv.ms/u/s!ApQWtR4hn8DdsfZH6-p0EQ-0xkXsEQ?e=8XEfmb)
 
 
