@@ -16,7 +16,7 @@ class TopicGenerationModel:
         Initialize the model with dataset name, pre-trained model path and training arguments.
 
         Args:
-            args (argparse.Namespace): Parsed command-line arguments.
+            args (argparse): Parsed command-line arguments.
         """
         self.args = args
         self.dataset_name = "ankitagr01/dynamic_topic_modeling_arxiv_abstracts"
@@ -33,6 +33,9 @@ class TopicGenerationModel:
     def load_datasets(self):
         """
         Load and prepare dataset.
+
+        Returns:
+            dataset, eval_dataset (tuple): A tuple containing the training dataset and evaluation dataset.
         """
         dataset = load_dataset(self.dataset_name, split="train")
         eval_dataset = load_dataset(self.dataset_name, split="test")
@@ -46,6 +49,13 @@ class TopicGenerationModel:
     def setup_trainer(self, dataset, eval_dataset):
         """
         Setup SFTTrainer with training arguments.
+
+        Args:
+            dataset (tuple): The training dataset.
+            eval_dataset (tuple): The evaluation dataset.
+
+        Returns:
+            trainer (SFTTrainer): An instance of SFTTrainer configured with the provided datasets and training arguments.
         """
         trainer = SFTTrainer(
             model = self.model,  # The pre-trained model to be fine-tuned
@@ -102,7 +112,7 @@ class TopicGenerationModel:
             trainer.train()
 
             # Model Save
-            self.model_handler.save_model(self.model, self.tokenizer, self.args.model_save_path, self.args.model_save_method)
+            self.model_handler.save_model(self.model, self.tokenizer, self.args.model_save_path)
         except Exception as e:
             print(f"Error occurred during training: {str(e)}")
             raise

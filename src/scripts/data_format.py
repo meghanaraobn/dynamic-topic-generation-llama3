@@ -5,6 +5,12 @@ class DataFormat:
     """
 
     def __init__(self, eos_token):
+        """
+        Initialize DataFormat with necessary attributes.
+
+        Args:
+            eos_token (str): End-of-sequence token to append to formatted prompts.
+        """
         self.input_key = "Abstract"  # "Abstract" is the key for abstracts in dataset
         self.response_key = "Topic"  # "Topic" is the key for topics in dataset
         self.instruction = "Please generate a meaningful topic for the following article."

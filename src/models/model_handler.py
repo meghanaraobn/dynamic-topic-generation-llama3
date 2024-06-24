@@ -20,9 +20,10 @@ class ModelHandler:
             model_path (str): Path to the model.
 
         Returns:
-            tuple: Loaded model and tokenizer.
+            model, tokenizer (tuple): Loaded model and tokenizer.
         """
         try:
+            # Load model and tokenizer
             model, tokenizer = FastLanguageModel.from_pretrained(
                 model_name = model_path,
                 max_seq_length = self.max_seq_length,
@@ -51,34 +52,18 @@ class ModelHandler:
             print(f"Error loading model or tokenizer: {e}")
             raise
 
-    def save_model(self, model, tokenizer, path="fine_tuned_model", save_method="lora"):
+    def save_model(self, model, tokenizer, path="fine_tuned_model"):
         """
         Saves the model and tokenizer to the specified path.
 
         Args:
-            model: The trained model to be saved.
-            tokenizer: The tokenizer to be saved.
+            model (tuple): The trained model to be saved.
+            tokenizer (tuple): The tokenizer to be saved.
             path (str): Directory path where the model and tokenizer will be saved.
-            save_method (str): Method to save the model. Options include "lora", "merged_16bit", "merged_4bit", "merged_lora".
         """
-        try:
-            if save_method == "lora": 
-                model.save_pretrained(path) # This only saves the LoRA adapters, and not the full model
-                tokenizer.save_pretrained(path)
-            elif save_method == "merged_16bit":
-                model.save_pretrained_merged(path, tokenizer, save_method="merged_16bit") # Merge to 16bit
-            elif save_method == "merged_4bit":
-                model.save_pretrained_merged(path, tokenizer, save_method="merged_4bit") # Merge to 4bit
-            elif save_method == "merged_lora":
-                model.save_pretrained_merged(path, tokenizer, save_method="lora") # Just Lora adapters
-            # Save to GGUF
-            # elif save_method == "gguf":
-                # model.save_pretrained_gguf(path, tokenizer, quantization_method="f16") # Save to 16bit GGUF --or--
-                # model.save_pretrained_gguf(path, tokenizer, quantization_method="q4_k_m") # Save to q4_k_m GGUF --or--
-                # model.save_pretrained_gguf(path, tokenizer) # Save to 8bit Q8_0
-            else:
-                raise ValueError(f"Unsupported save method: {save_method}")
-
+        try: 
+            model.save_pretrained(path) # This only saves the LoRA adapters, and not the full model
+            tokenizer.save_pretrained(path)
             print(f"Model and tokenizer saved successfully at {path}")
 
         except Exception as e:

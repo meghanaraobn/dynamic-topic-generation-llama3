@@ -30,7 +30,7 @@ class ModelInference:
             output_text (str): The complete output text.
 
         Returns:
-            str: The extracted response text.
+            response_text (str): The extracted response text.
         """
         response_marker = "### Response:"
         start_index = output_text.find(response_marker)
@@ -55,7 +55,7 @@ class ModelInference:
             input_text (str): The input text for which to generate a topic.
 
         Returns:
-            str: The generated topic.
+            response (str): The generated topic.
         """
         try:
             dataFormat = DataFormat(self.tokenizer.eos_token)
@@ -73,7 +73,7 @@ def parse_args():
     Parse command-line arguments.
 
     Returns:
-        Namespace: Parsed command-line arguments.
+        parser (argparse): An object containing the parsed command-line arguments as attributes.
     """
     parser = argparse.ArgumentParser(description="Topic Generation Inference", formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     parser.add_argument("--model_path", type=str, required=True, help="Path to the fined-tuned model")

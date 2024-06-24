@@ -4,11 +4,14 @@ from models.topic_generation_model import TopicGenerationModel
 def parse_args():
     """
     Parse command-line arguments.
+
+    Returns:
+        parser (argparse): An object containing the parsed command-line arguments as attributes.
     """
-    parser = argparse.ArgumentParser(description="Training script for dynamic topic generation model", formatter_class=argparse.ArgumentDefaultsHelpFormatter)
-    parser.add_argument("--wandb_key", type=str, help="Enable WandB integration")
-    parser.add_argument("--project_name", type=str, default="Dynamic_topic_generation_Llama3", help="Name of the project in WandB")
-    parser.add_argument("--per_device_train_batch_size", type=int, default=8, help="Batch size per GPU/device for training")
+    parser = argparse.ArgumentParser(description="Dynamic topic generation model arguments", formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+    parser.add_argument("--wandb_key", type=str, help="wandb API key")
+    parser.add_argument("--project_name", type=str, default="Dynamic_topic_generation_Llama3", help="Name of the project")
+    parser.add_argument("--per_device_train_batch_size", type=int, default=8, help="Batch size for training")
     parser.add_argument("--gradient_accumulation_steps", type=int, default=8, help="Number of steps to accumulate gradients before performing optimization")
     parser.add_argument("--warmup_steps", type=int, default=5, help="Number of warmup steps for learning rate scheduler")
     parser.add_argument("--num_train_epochs", type=int, default=1, help="Number of epochs for training")
@@ -23,12 +26,11 @@ def parse_args():
     parser.add_argument("--lr_scheduler_type", type=str, default="linear", help="Learning rate scheduler type")
     parser.add_argument("--seed", type=int, default=3407, help="Random seed for reproducibility")
     parser.add_argument("--model_save_path", type=str, default="fine_tuned_model", help="Path to save the fine-trained model")
-    parser.add_argument("--model_save_method", type=str, default="lora", help="Method to save the fine-tuned model. Options include 'lora', 'merged_16bit', 'merged_4bit', 'gguf'")
-    parser.add_argument("--output_dir", type=str, default="outputs", help="Directory to save output files (checkpoints, logs)")
+    parser.add_argument("--output_dir", type=str, default="outputs", help="Directory to save output files")
     parser.add_argument("--logging_dir", type=str, default="./logs", help="Directory to save logging files")
     return parser.parse_args()
 
 if __name__ == "__main__":
     args = parse_args()
     model = TopicGenerationModel(args)
-    model.train()
+    model.train() # Model training starts
