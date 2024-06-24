@@ -54,8 +54,13 @@ For managing the setup:
   docker-compose down
   ```
 
-### Fine-tuning
- - Coming soon
+### Fine-tuning the model
+ Logging is done using [Weights & Biases](https://wandb.ai/site). An account should be created to log the experiments.
+
+ The pre-trained Llama 3 model can be fine-tuned like this:
+   ```bash
+  python train.py
+  ```
 
 ## Notebook
 - Coming soon
