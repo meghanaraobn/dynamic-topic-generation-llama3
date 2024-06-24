@@ -10,7 +10,7 @@ Dynamic topic generation is the process of automatically identifying and categor
 The objective of this project is to fine-tune Llama 3 to perform dynamic topic generation for a given text paragraph.
 
 ## Datasets
-The dataset [ankitagr01/dynamic_topic_modeling_arxiv_abstracts](https://huggingface.co/datasets/ankitagr01/dynamic_topic_modeling_arxiv_abstracts) from Hugging Face is used. It consists of abstracts from arXiv and its corresponding topics. Selecting a dataset with topics for each text paragraph, rather than titles, summaries, or topic classes, is crucial for Llama 3. This ensures the model understands that it should dynamically generate topics based on the content of each paragraph.
+The dataset [ankitagr01/dynamic_topic_modeling_arxiv_abstracts](https://huggingface.co/datasets/ankitagr01/dynamic_topic_modeling_arxiv_abstracts) from Hugging Face is used. It consists of abstracts from arXiv and its corresponding topics. Selecting a dataset with topics for each text paragraph, rather than titles, summaries, or topic classes, is crucial for fine-tuning Llama 3. This ensures the model understands that it should dynamically generate only topics based on the content of each paragraph and not anything else.
 
 ### Data Preparation: Transforming Data Samples into Prompts
 Llama 3 is pre-trained on vast amounts of text data to understand natural language. However, to optimize its performance for specific tasks like dynamic topic generation, it needs to be fine-tuned using datasets formatted as prompts. This process provides additional context and improve its ability to generate text relevant to the task. Below is an example of original sample transformed to the prompt format.
