@@ -12,8 +12,8 @@ The objective of this project is to fine-tune Llama 3 to perform dynamic topic g
 ## Datasets
 The dataset [ankitagr01/dynamic_topic_modeling_arxiv_abstracts](https://huggingface.co/datasets/ankitagr01/dynamic_topic_modeling_arxiv_abstracts) from Hugging Face is used. It consists of abstracts from arXiv and its corresponding topics. Selecting a dataset with topics for each text paragraph, rather than titles, summaries, or topic classes, is crucial for Llama 3. This ensures the model understands that it should dynamically generate topics based on the content of each paragraph.
 
-### Transforming Dataset into Prompts
-Llama 3 is pre-trained on vast amounts of text data to understand natural language. However, it has to be adapted to specific tasks to perform well. By fine-tuning Llama 3 with datasets in the form of prompts, give it more context and improves its ability to generate text relevant to this dynamic topic generation task. Below is an example of original sample transformed to the prompt format.
+### Data Preparation: Transforming Data Samples into Prompts
+Llama 3 is pre-trained on vast amounts of text data to understand natural language. However, to optimize its performance for specific tasks, it needs to be fine-tuned using datasets formatted as prompts. This process provides additional context and improve its ability to generate text relevant to dynamic topic generation. Below is an example of original sample transformed to the prompt format.
   ```bash
     prompt = """Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
 
