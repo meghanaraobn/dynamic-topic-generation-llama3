@@ -34,7 +34,7 @@ These instructions will get you a copy of the project up and running on your loc
 * For pip users, please type the command `pip install -r requirements.txt`.
 * For conda users, you can create a new conda environment using `conda env create -f environment.yml`.
 ### Docker Support
-This project includes docker support for easy setup with configurations provided in `docker-compose.yml` and `Dockerfile`.
+This project includes docker support for easy setup with configurations provided in `docker-compose.yml` and `Dockerfile`. In order to expose the GPU to any docker container, NVIDIA Container Toolkit should be installed on the system. Installation steps can be found [here](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html).
 * Build the docker image
   ```bash
   docker-compose build
