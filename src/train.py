@@ -5,7 +5,7 @@ def parse_args():
     """
     Parse command-line arguments.
     """
-    parser = argparse.ArgumentParser(description="Training script for dynamic topic generation model")
+    parser = argparse.ArgumentParser(description="Training script for dynamic topic generation model", formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     parser.add_argument("--wandb_key", type=str, help="Enable WandB integration")
     parser.add_argument("--project_name", type=str, default="Dynamic_topic_generation_Llama3", help="Name of the project in WandB")
     parser.add_argument("--per_device_train_batch_size", type=int, default=8, help="Batch size per GPU/device for training")

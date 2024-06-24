@@ -75,7 +75,7 @@ def parse_args():
     Returns:
         Namespace: Parsed command-line arguments.
     """
-    parser = argparse.ArgumentParser(description="Topic Generation Inference")
+    parser = argparse.ArgumentParser(description="Topic Generation Inference", formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     parser.add_argument("--model_path", type=str, required=True, help="Path to the fined-tuned model")
     parser.add_argument("--input_file", type=str, required=True, help="Path to the input text file for topic generation")
     return parser.parse_args()
