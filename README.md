@@ -68,7 +68,7 @@ For managing the setup:
     ```
   * Example of setting specific arguments:
     ```bash
-    python train.py --wandb_key '<api_key>' --num_train_epochs 1 
+    python train.py --wandb_key '<api_key>' --num_train_epochs 1 --model_save_path 'fine_tuned_model'
     ```
     Note: To use steps instead of epochs for fine-tuning, comment out `num_train_epochs` and uncomment the `max_steps` training argument in the code.
 
