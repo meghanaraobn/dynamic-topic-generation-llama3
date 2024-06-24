@@ -32,7 +32,7 @@ These instructions will get you a copy of the project up and running on your loc
   cd dynamic-topic-generation-llama3
   ```
 * For pip users, please type the command `pip install -r requirements.txt`.
-* For Conda users, you can create a new Conda environment using `conda env create -f environment.yml`.
+* For conda users, you can create a new conda environment using `conda env create -f environment.yml`.
 ### Docker Support
 This project includes docker support for easy setup.
 * Build the docker image
@@ -51,8 +51,6 @@ docker exec -it topic-generation-container bash
 ```bash
 docker-compose down
 ```
-
-- Coming soon.    
 
 ### Fine-tuning
  - Coming soon
