@@ -57,20 +57,36 @@ For managing the setup:
 ### Fine-tuning the model
  Logging is done using [Weights & Biases](https://wandb.ai/site). An account should be created to log the experiments.
 
- To fine-tune the pre-trained Llama 3 model, use the following commands:
+ To fine-tune the pre-trained Llama 3 model, follow these steps:
  * View all available arguments and their default values:
    ```bash
-   python train.py --help
+   python src/train.py --help
    ```
   * Fine-tune with default settings:
     ```bash
-    python train.py
+    python src/train.py
     ```
   * Example of setting specific arguments:
     ```bash
-    python train.py --wandb_key '<api_key>' --num_train_epochs 1 --model_save_path 'fine_tuned_model'
+    python src/train.py --wandb_key '<api_key>' --num_train_epochs 1 --model_save_path 'fine_tuned_model'
     ```
     Note: To use steps instead of epochs for fine-tuning, comment out `num_train_epochs` and uncomment the `max_steps` training argument in the code.
+
+ ### Model Inference
+ To dynamically generate topics for a given input text collection, follow these steps:
+ * View all required arguments:
+   ```bash
+   python src/inference.py --help
+   ```
+ * Prepare your input:
+   Place the input text in the file `data/input.txt` and save the file.
+   
+ * Generate topics from input:
+   ```bash
+   python src/inference.py --model_path 'fine_tuned_model' --input_file 'data/input.txt'
+   ```
+   Note: model_path should point to the directory containing the fine-tuned model.
+
 
 ## Notebook
 - Coming soon
