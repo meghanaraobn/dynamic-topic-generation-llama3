@@ -35,20 +35,22 @@ These instructions will get you a copy of the project up and running on your loc
 * For Conda users, you can create a new Conda environment using `conda env create -f environment.yml`.
 ### Docker Support
 This project includes Docker support for easy setup.
-```bash
 # Build the docker image
+```bash
 docker compose build
 ```
-```bash
+
 # To spin the container
+```bash
 docker compose up -d
 ```
-```bash
+
 # To enter into the container (topic-generation-container)
+```bash
 docker exec -it topic-generation-container bash
 ```
-```bash
 # To stop the container
+```bash
 docker compose down
 ```
 
