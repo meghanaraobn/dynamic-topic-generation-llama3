@@ -17,7 +17,11 @@ The pre-quantized 4-bit [unsloth/llama-3-8b-bnb-4bit](https://colab.research.goo
 
 ## Process
 - Coming soon
-
+## Prerequisites
+* Linux or macOS (recommended)
+* Python 3
+* NVIDIA GPU + CUDA CuDNN
+  
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
