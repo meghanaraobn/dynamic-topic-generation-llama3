@@ -25,7 +25,7 @@ The pre-quantized 4-bit [unsloth/llama-3-8b-bnb-4bit](https://colab.research.goo
 
 ## Code Structure
 The project is organized into the following directories and files:
-- data/: Contains input.txt file with sample text for testing purposes.
+- `data/`: Contains input.txt file with sample text for testing purposes.
 - src/: Includes the main source code files.
     - models/: Directory for model-related functionalities.
         - model_handler.py: Script to load and save a model
