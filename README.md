@@ -17,6 +17,7 @@ The pre-quantized 4-bit [unsloth/llama-3-8b-bnb-4bit](https://colab.research.goo
 
 ## Process
 - Coming soon
+  
 ## Prerequisites
 * Linux or macOS (recommended)
 * Python 3
@@ -90,9 +91,6 @@ For managing the setup:
 
 ## Notebook
 The notebook version of the project is present here.
-
-## Sample results  
-- Coming soon
 
 ## Improvement Ideas
 - Coming soon
