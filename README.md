@@ -103,9 +103,9 @@ For managing the setup:
     ```
   * Example of setting specific arguments:
     ```bash
-    python src/train.py --wandb_key '<api_key>' --num_train_epochs 1 --model_save_path 'fine_tuned_model' --model_save_method 'lora'
+    python src/train.py --wandb_key '<api_key>' --num_train_epochs 1 --model_save_path 'fine_tuned_model'
     ```
-    Note: To use steps instead of epochs for fine-tuning, comment out `num_train_epochs` and uncomment the `max_steps` training argument in the code. For only saving LoRA adapters instead of saving the entire model, select `model_save_method` as 'lora'. To save the model with precision float16 or int4, select `model_save_method` as 'merged_16bit' or 'merged_4bit' respectively.
+    Note: To use steps instead of epochs for fine-tuning, comment out `num_train_epochs` and uncomment the `max_steps` training argument in the code.
 
  ## Model Inference
  To dynamically generate topics for a given input text collection, follow these steps:
