@@ -36,21 +36,21 @@ These instructions will get you a copy of the project up and running on your loc
 ### Docker Support
 This project includes docker support for easy setup with configurations provided in `docker-compose.yml` and `Dockerfile`.
 * Build the docker image
-```bash
-docker-compose build
-```
+  ```bash
+  docker-compose build
+  ```
 * To spin the container
-```bash
-docker-compose up -d
-```
+  ```bash
+  docker-compose up -d
+  ```
 * To enter into the container (topic-generation-container)
-```bash
-docker exec -it topic-generation-container bash
-```
+  ```bash
+  docker exec -it topic-generation-container bash
+  ```
 * To stop the container
-```bash
-docker-compose down
-```
+  ```bash
+  docker-compose down
+  ```
 
 ### Fine-tuning
  - Coming soon
