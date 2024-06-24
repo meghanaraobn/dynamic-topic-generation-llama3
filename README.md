@@ -109,7 +109,7 @@ For managing the setup:
 
 
 ## Notebook
-The notebook version of the project is present here.
+The notebook version of the project is present [here](./src/notebooks).
 
 ## Improvement Ideas
 - Coming soon
