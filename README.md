@@ -107,6 +107,8 @@ For managing the setup:
     ```
     Note: To use steps instead of epochs for fine-tuning, comment out `num_train_epochs` and uncomment the `max_steps` training argument in the code.
 
+    Fine-tuned model can be downloaded [here](https://1drv.ms/u/s!ApQWtR4hn8DdsfZH6-p0EQ-0xkXsEQ?e=8XEfmb)
+
  ## Model Inference
  To dynamically generate topics for a given input text collection, follow these steps:
  * View all required arguments:
@@ -121,8 +123,6 @@ For managing the setup:
    python src/inference.py --model_path 'fine_tuned_model' --input_file 'data/input.txt'
    ```
    Note: model_path should point to the directory containing the fine-tuned model.
-
-   Fine-tuned model can be downloaded [here](https://1drv.ms/u/s!ApQWtR4hn8DdsfZH6-p0EQ-0xkXsEQ?e=8XEfmb)
 
 
 ## Notebook
