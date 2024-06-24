@@ -17,27 +17,99 @@ The pre-quantized 4-bit [unsloth/llama-3-8b-bnb-4bit](https://colab.research.goo
 
 ## Process
 - Coming soon
+  
+## Prerequisites
+* Linux or macOS (recommended)
+* Python 3
+* NVIDIA GPU + CUDA CuDNN
 
+## Code Structure
+The project is organized into the following directories and files:
+- `data/`: Contains input.txt file with sample text for testing purposes.
+- `src/`: Includes the main source code files.
+    - `models/`: Directory for model-related functionalities.
+        - `model_handler.py`: Script to load and save a model
+        - `topic_generation_model.py`: Sript to train dynamic topic generation model.
+    - `scripts/`: Directory for additional scripts and utilities.
+        - `data_format.py`: Script to handle data formatting.
+    - `inference.py`: Script for model inference.
+    - `train.py`: Script for model training.
+- `dockerignore`: To exclude unnecessary files from the Docker build context.
+- `gitignore`: To ignore certain files from version control.
+- `Dockerfile`: To build the project's docker image.
+- `docker-compose.yml`: Configuration file for docker compose.
+- `environment.yml`: Defines the conda environment for the project.
+- `requirements.txt`: Lists python dependencies required for the project.
+- `task.txt`: Task-related information.
+  
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ### Installation
 * Clone this repo:
   ```bash
-  git clone https://github.com/meghanaraobn/SUMM-AI-TASK.git
+  git clone https://github.com/meghanaraobn/dynamic-topic-generation-llama3.git
+  cd dynamic-topic-generation-llama3
   ```
-* Or download and unzip it.
-### Docker
-- Coming soon.    
+* For pip users, please type the command `pip install -r requirements.txt`.
+* For conda users, you can create a new conda environment using `conda env create -f environment.yml`.
+### Docker Support
+This project includes docker support for easy setup with configurations provided in `docker-compose.yml` and `Dockerfile`. To enable GPU support within Docker containers, ensure the NVIDIA Container Toolkit is installed on the system. Detailed installation instructions can be found [here](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html).
 
-### Fine-tuning
- - Coming soon
+For managing the setup:
+* Build the docker image
+  ```bash
+  docker-compose build
+  ```
+* To spin the container
+  ```bash
+  docker-compose up -d
+  ```
+* To enter into the container (topic-generation-container)
+  ```bash
+  docker exec -it topic-generation-container bash
+  ```
+* To stop the container
+  ```bash
+  docker-compose down
+  ```
+
+### Fine-tuning the model
+ Logging is done using [Weights & Biases](https://wandb.ai/site). An account should be created to log the experiments.
+
+ To fine-tune the pre-trained Llama 3 model, follow these steps:
+ * View all available arguments and their default values:
+   ```bash
+   python src/train.py --help
+   ```
+  * Fine-tune with default settings:
+    ```bash
+    python src/train.py
+    ```
+  * Example of setting specific arguments:
+    ```bash
+    python src/train.py --wandb_key '<api_key>' --num_train_epochs 1 --model_save_path 'fine_tuned_model'
+    ```
+    Note: To use steps instead of epochs for fine-tuning, comment out `num_train_epochs` and uncomment the `max_steps` training argument in the code.
+
+ ### Model Inference
+ To dynamically generate topics for a given input text collection, follow these steps:
+ * View all required arguments:
+   ```bash
+   python src/inference.py --help
+   ```
+ * Prepare your input:
+   Place the input text in the file `data/input.txt` and save the file.
+   
+ * Generate topics from input:
+   ```bash
+   python src/inference.py --model_path 'fine_tuned_model' --input_file 'data/input.txt'
+   ```
+   Note: model_path should point to the directory containing the fine-tuned model.
+
 
 ## Notebook
-- Coming soon
-
-## Sample results  
-- Coming soon
+The notebook version of the project is present here.
 
 ## Improvement Ideas
 - Coming soon
