@@ -89,7 +89,7 @@ For managing the setup:
 
 
 ## Notebook
-- Coming soon
+The notebook version of the project is present here.
 
 ## Sample results  
 - Coming soon
