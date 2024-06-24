@@ -34,7 +34,7 @@ These instructions will get you a copy of the project up and running on your loc
 * For pip users, please type the command `pip install -r requirements.txt`.
 * For conda users, you can create a new conda environment using `conda env create -f environment.yml`.
 ### Docker Support
-This project includes docker support for easy setup.
+This project includes docker support for easy setup utilizing `docker-compose.yml` and `Dockerfile` configurations.
 * Build the docker image
 ```bash
 docker-compose build
